@@ -24,6 +24,8 @@ test_subjects <- read.table(sprintf("%s/test/subject_test.txt", data_dir))
 # Append test set with features/subjects/labels
 data_set <- rbind(data_set, cbind(test_set, test_subjects, test_labels))
 
+rm(test_set, test_labels, test_subjects)
+
 ## 2. Extract only the measurements on the mean and standard deviation for each measurement
 # Read the file with the descriptions of the input features
 feature_names <- read.table(sprintf("%s/features.txt", data_dir), sep = " ")
@@ -39,7 +41,7 @@ activities <- read.table(sprintf("%s/activity_labels.txt", data_dir), sep = " ")
 activities <- tolower(activities[,2])
 
 # Add a column of descriptive activity names
-data_set$activity <- activities[data[,ncol(data)]]
+data_set$activity <- activities[data_set[,ncol(data_set)]]
 
 ## HERE
 ## 4. Appropriately labels the data set with descriptive variable names. 
