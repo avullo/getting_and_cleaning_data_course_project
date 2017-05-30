@@ -30,6 +30,26 @@ merge_data_sets <- function(directory) {
   data_set
 }
 
+## filter_measurements
+## For the merged data set obtained in step 1, extracts only the measurements on 
+## the mean and standard deviation for each measurement
+
+filter_measurements <- function(data, directory) {
+  ## 'data' is the data frame obtained by merging the training and test
+  ## set together
+  
+  ## 'directory' is is a character vector of length 1 indicating
+  ## the location of the 'features.txt' file which maps numeric
+  ## indices to the names of the features in the input vector
+  
+  ## Read the file with the descriptions of the input features
+  feature_names <- read.table(sprintf("%s/features.txt"), sep = " ")
+  
+  ## Return the data frame with only the mean/std measurements, plus
+  ## subject index and output label
+  data[, c(grep("mean|std", feature_names[,2]), 562, 563)]
+}
+
 ## get_activity_names
 ## Return a vector of descriptive activity names (lower case)
 
