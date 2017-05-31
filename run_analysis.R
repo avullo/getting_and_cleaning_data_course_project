@@ -41,10 +41,10 @@ activities <- read.table(sprintf("%s/activity_labels.txt", data_dir), sep = " ")
 activities <- tolower(activities[,2])
 
 # Add a column of descriptive activity names
-data_set$activity <- activities[data_set[,ncol(data_set)]]
+data_set$activity <- as.factor(activities[data_set[,ncol(data_set)]])
 
-## HERE
 ## 4. Appropriately labels the data set with descriptive variable names. 
+names(data_set)[1:ncol(data_set)-1] <- c(gsub("[()]", "", tolower(feature_names[,2][grep("mean|std", feature_names[,2])])), "subject", "activitylabel")
 
 
 
