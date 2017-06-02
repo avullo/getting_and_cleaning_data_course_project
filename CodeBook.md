@@ -2,7 +2,7 @@
 
 ## Study design
 Please refer to the the file README.txt in the "UCI HAR Dataset" directory for a description of the original dataset.
-In order to get the tidy data set ready for analysis, he following transformations are applied:
+In order to get the tidy data set ready for analysis, the following transformations are applied:
 - the training and the test sets are merged to create one data set;
 
 The columns of the resulting data frame are the 561 original features plus two colums which identify the subject and her activity.
@@ -18,11 +18,13 @@ Meaningful names are derived from the "activity_labels.txt" file.
 The original column with activity labels is removed from the data frame.
 
 - label the data set with descriptive variable names.
+
 The labels are lower case feature variable names with parentheses removed.
 The identifier "subject" is used as the name of the column indentifying subjects.
 
 - The final tidy independent data set is derived by taking the average of each variable for each activity and each subject.
-This last step is particularly controversial as the given instruction gives room to multiple interpretation.
+
+This last step is particularly controversial as the given instruction gives room to multiple interpretations.
 In this case the narrow data set approach is taken:  the final "tidy" dataset will have a single row for each 
 unique combination of activity and subject, and many columns containing the averages for each "signal-variable" pair.
 Since there are 6 activities and 30 subjects, there are 180 records, assuming each subject is recorded in six activities.
