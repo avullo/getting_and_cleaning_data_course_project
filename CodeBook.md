@@ -4,7 +4,7 @@
 
 ### Notes
 - each variable comes with a brief description and standard summary values
-- the value of each variable in each row represents the average computed over a particular combination of subject and activity
+- the value of each variable in each row represents the average computed over possible combinations of subject and activity
 - please refer to the README.md file for a more involved description
 
 ### Variables
