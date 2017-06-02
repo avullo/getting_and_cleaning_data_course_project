@@ -12,7 +12,7 @@ You're reading it.
 #### Description
 
 A script to automatically transform data collected from the accelerometers from the Samsung Galaxy S smartphone
-into a tidy dataset. Please read CodeBook.md for a description of the he variables, the data, and any transformations
+into a tidy dataset. Please read CodeBook.md for a description of the variables, the data, and any transformations
 performed to clean up the data.
 
 #### Usage
