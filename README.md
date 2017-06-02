@@ -30,3 +30,10 @@ obtained from the original data using the transformations described in the code 
 
 ### CodeBook.md
 The code book for this project.
+
+### codebook.R
+
+#### Description
+
+A script which automatically format (markdown) and dump the code book content in the CodeBook.md file. It assumes
+the tidy data set file has been produced by running the run_analysis.R script and is present in the working directory.
