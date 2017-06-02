@@ -37,3 +37,12 @@ The code book for this project.
 
 A script which automatically format (markdown) and dump the code book content in the CodeBook.md file. It assumes
 the tidy data set file has been produced by running the run_analysis.R script and is present in the working directory.
+
+#### Usage
+
+```
+Rscript codebook.R
+```
+
+#### Output
+The file CodeBook.md.
