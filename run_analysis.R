@@ -5,6 +5,8 @@
 # data collected from the accelerometers from the Samsung 
 # Galaxy S smartphone.
 
+library(reshape) # for colsplit
+
 ## assume Samsung data is in working directory
 data_dir <- "UCI HAR Dataset"
 
@@ -70,6 +72,13 @@ subject_activity_split <- split(data_set, list(data_set$subject, data_set$activi
 # NOTE: saaply returns a matrix with rows corresponding to the features, hence the transpose
 # and explicit coercion to data frame
 tidy_data_set <- as.data.frame(t(sapply(subject_activity_split, function(x) colMeans(x[,1:79]))))
+
+# subject and activity columns are lost but are transformed into rownames 'subject.activity'
+# transform the rownames into two columns: 'subject', 'activity'
+tidy_data_set$subject_activity <- rownames(tidy_data_set)
+rownames(tidy_data_set) <- NULL
+tidy_data_set <- cbind(tidy_data_set, colsplit(tidy_data_set$subject_activity, split = "\\.", names = c('subject', 'activity')))
+tidy_data_set$subject_activity <- NULL
 
 ## 6. Write down the tidy data set to file with name "tidy_dataset.txt"
 write.table(tidy_data_set, file="tidy_dataset.txt", row.names=FALSE)
