@@ -2,12 +2,12 @@
 
 ## Getting and Cleaning Data Course
 
-## Content
-
 ### Note for the Reviewer
 For this assignment, I have submitted an incomplete tidy data set with no subject and activity column values.
 
-The correct tidy data set is now push into the repo (tidy_dataset.txt). It would *very* kind if you'd evaluate my assignment on the basis on the file you find in the repo instead. Thanks ;)
+The correct tidy data set is now pushed into the repo (tidy_dataset.txt). It would *very* kind if you'd evaluate my assignment on the basis on the file you find in the repo instead. Thanks ;)
+
+## Content
 
 ### run_analysis.R
 
