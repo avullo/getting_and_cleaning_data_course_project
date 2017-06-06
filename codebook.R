@@ -60,6 +60,7 @@ write("#### Feature variables", file = "CodeBook.md", append = TRUE)
 write("", file = "CodeBook.md", append = TRUE)
 dataset <- read.table("tidy_dataset.txt", header = TRUE)
 for (feature in colnames(dataset)) {
+  if(feature == "subject" | feature == 'activity') next
   if(grepl("^t", feature)) {
     description <- "Time domain"
   } else if(grepl("^f", feature)) {

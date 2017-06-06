@@ -526,17 +526,3 @@ Since there are 6 activities and 30 subjects, there are 180 records, assuming ea
 -0.18290  0.05423  0.11160  0.12590  0.20810  0.42630 
 ```
 
-**subject** _Frequency domain angular velocity jerk signal magnitude weighted average_
-```
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    1.0     8.0    15.5    15.5    23.0    30.0 
-```
-
-**activity** _Frequency domain angular velocity jerk signal magnitude weighted average - y axis_
-```
-            laying            sitting           standing            walking 
-                30                 30                 30                 30 
-walking_downstairs   walking_upstairs 
-                30                 30 
-```
-
