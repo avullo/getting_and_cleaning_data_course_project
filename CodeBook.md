@@ -1,6 +1,14 @@
 # Getting and Cleaning Data Course Project
 
 ## Study design
+
+### Getting the Data
+
+- Download the data from [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip];
+- Unzip the data into your working directory, you should see the subdirectory "UCI HAR Dataset"
+
+### Transforming the Data
+
 Please refer to the the file README.txt in the "UCI HAR Dataset" directory for a description of the original dataset.
 In order to get the tidy data set ready for analysis, the following transformations are applied:
 - the training and the test sets are merged to create one data set;
@@ -10,7 +18,7 @@ This results in a data frame where each row is the observation of a particular s
 
 - extracts only the measurements on the mean and standard deviation for each measurement. 
 
-This results in 81 values observations: 79 feature values plus subject/activity identifiers.
+This results in a set of observations comprising 81 values: 79 feature values plus subject/activity identifiers.
 
 - use descriptive activity names to name the activities in the data set
 
@@ -30,10 +38,19 @@ unique combination of activity and subject, and many columns containing the aver
 Since there are 6 activities and 30 subjects, there are 180 records, assuming each subject is recorded in six activities.
 
 ### Code book
+
 #### Notes
-- each variable comes with a brief description and standard summary values
+
+- each feature variable comes with a brief description and standard summary values 
 - the value of each variable in each row represents the average computed over possible combinations of subject and activity
 
+#### Identifier Variables
+
+- **subject** _numerical identifier for the subject performing an activity_
+
+- **activity** _categorical variable with six possible states identifying the activity of each subject_ (laying, sitting, standing, walking, walking_downstairs, walking_upstairs)
+
+#### Feature variables
 
 **tbodyacc_mean_x** _Time domain body acceleration mean value - x axis_
 ```
@@ -507,5 +524,19 @@ Since there are 6 activities and 30 subjects, there are 180 records, assuming ea
 ```
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
 -0.18290  0.05423  0.11160  0.12590  0.20810  0.42630 
+```
+
+**subject** _Frequency domain angular velocity jerk signal magnitude weighted average_
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0     8.0    15.5    15.5    23.0    30.0 
+```
+
+**activity** _Frequency domain angular velocity jerk signal magnitude weighted average - y axis_
+```
+            laying            sitting           standing            walking 
+                30                 30                 30                 30 
+walking_downstairs   walking_upstairs 
+                30                 30 
 ```
 
